@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Книга рецептов</h1>
+<h3>Добавь свой рецепт:</h3>
+
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+<div>
+<p>
+    {{ form.ingredient_1.label }}<br>
+    {{ form.ingredient_1(size=25) }}
+    {% for error in form.ingredient_1.errors %}
+    <span style="color: green;">{{ error }}</span>
+    {% endfor %}
+</p>
+    <p>
+        {{ form.quantity_1.label }}<br>
+        {{ form.quantity_1(size=10) }}
+        {% for error in form.quantity_1.errors %}
+        <span style="color: green;">{{ error }}</span>
+        {% endfor %}
+    </p>
+</div>
+
+<div>
+<p>
+    {{ form.ingredient_2.label }}<br>
+    {{ form.ingredient_2(size=25) }}
+    {% for error in form.ingredient_2.errors %}
+    <span style="color: green;">{{ error }}</span>
+    {% endfor %}
+</p>
+<p>
+    {{ form.quantity_2.label }}<br>
+    {{ form.quantity_2(size=10) }}
+    {% for error in form.quantity_2.errors %}
+    <span style="color: green;">{{ error }}</span>
+    {% endfor %}
+</p>
+</div>
+<p>
+    {{ form.salt.label }}<br>
+    {{ form.salt(size=2) }}
+</p>
+<p>
+    {{ form.submit() }}
+</p>
+</form>
+
+{% endblock %}

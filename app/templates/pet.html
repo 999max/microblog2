@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Tell about your pets</h1>
+
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+<div>
+<p>
+    {{ form.pet_1.label }}
+    {{ form.pet_1(size=20) }}<br>
+    {% for error in form.pet_1.errors %}
+    <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+</p>
+<p>
+    {{ form.pet_1_name.label }}
+    {{ form.pet_1_name(size=20) }}<br>
+    {% for error in form.pet_1_name.errors %}
+    <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+</p>
+<p>
+    {{ form.sex_1.label }}
+    {{ form.sex_1(size=2) }}<br>
+    {% for error in form.sex_1.errors %}
+    <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+</p>
+</div>
+<div>
+<p>
+    {{ form.pet_2.label }}
+    {{ form.pet_2(size=20) }}<br>
+    {% for error in form.pet_2.errors %}
+    <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+</p>
+<p>
+    {{ form.pet_2_name.label }}
+    {{ form.pet_2_name(size=20) }}<br>
+    {% for error in form.pet_2_name.errors %}
+    <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+</p>
+<p>
+    {{ form.sex_2.label }}
+    {{ form.sex_2(size=2) }}<br>
+    {% for error in form.sex_2.errors %}
+    <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+</p>
+    </div>
+<div>
+    <p>
+        {{ form.submit() }}
+    </p>
+</div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Reset your password</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+
+<p>
+    {{ form.username.label }}<br>
+    {{ form.username(size=40) }}
+    {% for e in form.username.errors %}
+    <span style="color: red;">{{ e }}</span>
+    {% endfor %}
+</p>
+<p>
+    {{ form.email.label }}<br>
+    {{ form.email(size=40) }}
+    {% for e in form.email.errors %}
+    <span style="color: red;">{{ e }}</span>
+    {% endfor %}
+</p>
+<p>
+    {{ form.new_password.label }}<br>
+    {{ form.new_password(size=40) }}
+    {% for e in form.new_password.errors %}
+    <span style="color: red;">{{ e }}</span>
+    {% endfor %}
+</p>
+<p>
+    {{ form.new_password2.label }}<br>
+    {{ form.new_password2(size=40) }}
+    {% for e in form.new_password2.errors %}
+    <span style="color: red;">{{ e }}</span>
+    {% endfor %}
+</p>
+<p>
+    {{ form.submit() }}
+</p>
+
+
+</form>
+{% endblock %}

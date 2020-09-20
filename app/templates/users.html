@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Registered users</h2>
+{% for user in users %}
+<table>
+<tr>
+    <td>
+    <p><a href="{{ url_for('user', username=user.username) }}"><img src="{{ user.avatar(36) }}"></a>
+        User {{ user.username }} email {{ user.email }} and {{ user.id }} id.</p>
+    </td>
+</tr>
+</table>    
+{% endfor %}
+
+{% endblock %}

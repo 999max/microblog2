@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Собери свою футбольную команду</h1>
+<h3>Здесь ты можешь добавить своего игрока</h3>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+
+    <p>
+        {{ form.player_name.label }}<br>
+        {{ form.player_name(size=20) }}
+        {% for error in form.player_name.errors %}
+        <span style="color: red";>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.player_number.label }} <br>
+        {{ form.player_number(size=5) }}
+        {% for erorr in form.player_number.errors %}
+        <span style="color: red";>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.age.label }}<br>
+        {{ form.age(size=5) }}
+    </p>
+    <p>
+        {{ form.position.label }}<br>
+        {{ form.position(size=4) }}
+    </p>
+    <p>
+        {{ form.submit() }}
+    </p>
+
+</form>
+
+{% endblock %}
