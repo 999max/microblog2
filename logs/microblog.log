@@ -32,3 +32,4 @@ Traceback (most recent call last):
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: email/reset_password.txt
 2020-09-20 19:33:38,999 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:36
+2020-09-20 19:42:18,130 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:36
