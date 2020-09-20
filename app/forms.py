@@ -47,9 +47,12 @@ class EditProfileForm(FlaskForm):
                 raise ValidationError("please use a different name!!!")
 
 
+class ResetPasswordRequestForm(FlaskForm):
+    email = StringField("Email", validators=[DataRequired(), Email()])
+    submit = SubmitField("Request Password Reset")
+
+
 class ResetPasswordForm(FlaskForm):
-    username = StringField("Enter your username", validators=[DataRequired()])
-    email = StringField("Enter your e-mail", validators=[DataRequired(), Email()])
     new_password = PasswordField("New Password", validators=[DataRequired()])
     new_password2 = PasswordField("Repeat new password", validators=[DataRequired(), EqualTo("new_password")])
     submit = SubmitField("Submit")

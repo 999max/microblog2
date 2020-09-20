@@ -3,8 +3,10 @@ from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from app import appl, db
-from app.forms import LoginForm, RegistrationForm, FootballForm, RecieptForm, PetForm, EditProfileForm, ResetPasswordForm, PostForm
+from app.forms import LoginForm, RegistrationForm, FootballForm, RecieptForm, PetForm, EditProfileForm, \
+    ResetPasswordForm, PostForm, ResetPasswordRequestForm
 from app.models import User, Post
+from app.email import send_password_reset_email
 
 
 @appl.before_request
@@ -127,20 +129,35 @@ def edit_profile():
     return render_template("edit_profile.html", title="Edit profile", form=form)
 
 
-@appl.route("/forget_pass", methods=["GET", "POST"])
-def forget_pass():
+@appl.route("/reset_password_request", methods=["GET", "POST"])
+def reset_password_request():
+    if current_user.is_authenticated:
+        return redirect(url_for("index"))
+    form = ResetPasswordRequestForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user:
+            send_password_reset_email(user)
+        flash("Check your email to reset your password")
+        return redirect(url_for("login"))
+    return render_template("reset_password_request.html", title='Reset Password', form=form)
+
+
+@appl.route("/reset_password/<token>", methods=["GET", "POST"])
+def reset_password(token):
+    if current_user.is_authenticated:
+        return redirect(url_for("index"))
+    user = User.verify_reset_password_token(token)
+    if not user:
+        # add flash("user not found or time expired")
+        return redirect(url_for("index"))
     form = ResetPasswordForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        flash("changing for user {}...".format(user.username))
         user.set_password(form.new_password.data)
         db.session.commit()
-        flash("Password was updated")
+        flash("Your password has been changed.")
         return redirect(url_for("login"))
-    elif request.method == "GET":
-        form.username.data = "username"
-        form.email.data = "user email"
-    return render_template("forget_pass.html", title='Reset Password', form=form)
+    return render_template("reset_password.html", form=form)
 
 
 @appl.route("/follow/<username>")
