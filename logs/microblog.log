@@ -61,3 +61,4 @@ jinja2.exceptions.UndefinedError: 'from' is undefined
 2020-09-20 15:51:26,102 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:35
 2020-09-20 15:58:59,197 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:36
 2020-09-20 16:00:35,420 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:36
+2020-09-20 16:37:13,687 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:36
