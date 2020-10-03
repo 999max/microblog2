@@ -7,6 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from logging.handlers import RotatingFileHandler
 from flask_mail import Mail
+from flask_bootstrap import Bootstrap
 
 
 appl = Flask(__name__)
@@ -14,7 +15,7 @@ appl.config.from_object(Config)
 db = SQLAlchemy(app=appl)
 migrate = Migrate(app=appl, db=db)
 mail = Mail(appl)
-
+bootstrap = Bootstrap(appl)
 
 login = LoginManager(app=appl)
 login.login_view = "login"

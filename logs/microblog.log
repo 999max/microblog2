@@ -33,3 +33,14 @@ Traceback (most recent call last):
 jinja2.exceptions.TemplateNotFound: email/reset_password.txt
 2020-09-20 19:33:38,999 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:36
 2020-09-20 19:42:18,130 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:36
+2020-10-03 16:31:04,309 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:36
+2020-10-03 16:31:09,911 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:36
+2020-10-03 16:33:47,571 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:37
+2020-10-03 18:01:52,724 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:37
+2020-10-03 18:04:17,752 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:37
+2020-10-03 18:06:16,685 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:37
+2020-10-03 18:12:09,643 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:37
+2020-10-03 18:12:30,857 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:37
+2020-10-03 18:29:58,229 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:37
+2020-10-03 18:33:40,372 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:37
+2020-10-03 18:35:14,373 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:37
