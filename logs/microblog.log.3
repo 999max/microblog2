@@ -1,4 +1,4 @@
-2020-10-04 19:44:30,400 ERROR: Exception on /index [GET] [in c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\app.py:1892
+2020-10-04 19:55:51,117 ERROR: Exception on /index [GET] [in c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\app.py:1892
 Traceback (most recent call last):
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -26,8 +26,8 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\index.html", line 1, in top-level template code
-    {% extends "base.html" %}
+  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
@@ -40,7 +40,7 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\base.html", line 55, in block "content"
     {% block app_content %} {% endblock %}
-  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\index.html", line 23, in block "app_content"
+  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\index.html", line 28, in block "app_content"
     {% include "_post.html" %}
   File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\_post.html", line 15, in top-level template code
     {{ _('%username)s said %(when)s',
@@ -51,8 +51,9 @@ Traceback (most recent call last):
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\markupsafe\__init__.py", line 102, in __mod__
     return self.__class__(text_type.__mod__(self, arg))
 TypeError: %u format: a number is required, not _MarkupEscapeHelper
-2020-10-04 19:55:00,835 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:42
-2020-10-04 19:55:05,167 ERROR: Exception on /index [GET] [in c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\app.py:1892
+2020-10-04 19:58:52,075 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:42
+2020-10-04 21:12:23,057 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:42
+2020-10-04 21:13:13,778 ERROR: Exception on /user/mike [GET] [in c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\app.py:1892
 Traceback (most recent call last):
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -68,8 +69,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\routes.py", line 39, in index
-    posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\routes.py", line 108, in user
+    next_url=next_url, prev_url=prev_url)
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
@@ -86,7 +87,6 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\index.html", line 40, in template
-    {{ _'(Next') }} <span aria-hidden="true">&rarr;</span>
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'string'
-2020-10-04 19:55:46,300 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:42
+  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\user.html", line 14, in template
+    <p>{{ _('Last seen on') }: {{ moment(user.last_seen).format('LLL') }}</p>
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'

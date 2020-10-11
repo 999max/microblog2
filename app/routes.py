@@ -5,7 +5,7 @@ from werkzeug.urls import url_parse
 from flask_babel import _, get_locale
 from guess_language import guess_language
 from app import appl, db
-from app.forms import LoginForm, RegistrationForm, FootballForm, RecieptForm, PetForm, EditProfileForm, \
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, \
     ResetPasswordForm, PostForm, ResetPasswordRequestForm
 from app.models import User, Post
 from app.email import send_password_reset_email
@@ -205,38 +205,3 @@ def unfollow(username):
 def translate_text():
     return jsonify({"text": translate(request.form["text"],
                                       request.form["dest_language"])})
-
-
-###
-@appl.route("/football", methods=["GET", "POST"])
-@login_required
-def football():
-    form = FootballForm()
-    if form.validate_on_submit():
-        flash("{} {} с номером {} был добавлен в твою команду".format(
-            "".join(form.position.data), form.player_name.data, form.player_number.data))
-        return redirect(url_for('football'))
-    return render_template("football.html", form=form)
-
-
-@appl.route("/reciept", methods=["GET", "POST"])
-def reciept():
-    recform = RecieptForm()
-    if recform.validate_on_submit():
-        if recform.salt.data == ["2"]:
-            salt = "не "
-        else:
-            salt = ""
-        flash("Вы доабавили новый рецепт и {}посолили".format(salt))
-        return redirect(url_for('reciept'))
-    return render_template("reciept.html", form=recform)
-
-
-@appl.route("/pet", methods=["GET", "POST"])
-def pet():
-    form = PetForm()
-    if form.validate_on_submit():
-        flash("You added 2 pets: {} {} and {} {}")#.format(
-            #form.pet_1.data, form.pet_1_name.data, form.pet_2.data, form.pet_2_name.data))
-        return redirect(url_for('pet'))
-    return render_template("pet.html", form=form)

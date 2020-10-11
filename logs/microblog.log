@@ -1,4 +1,4 @@
-2020-10-11 13:34:12,701 ERROR: Exception on /index [GET] [in c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\app.py:1892
+2020-10-11 20:41:00,436 ERROR: Exception on / [GET] [in c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\app.py:1892
 Traceback (most recent call last):
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,7 +14,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\routes.py", line 44, in index
+  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\routes.py", line 45, in index
     posts=posts.items, next_url=next_url, prev_url=prev_url)
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask\templating.py", line 140, in render_template
     ctx.app,
@@ -26,53 +26,15 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\base.html", line 55, in block "content"
-    {% block app_content %} {% endblock %}
-  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\index.html", line 28, in block "app_content"
-    {% include "_post.html" %}
+  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\home\google диск\pyproject\goflask\migelbook\microblog2\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\_post.html", line 24, in template
-    <a href="#">{{ _('Translate') }}</a>
-jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2020-10-11 13:35:52,720 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 13:36:36,162 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 13:40:14,420 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 13:43:32,129 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 13:45:11,788 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 14:35:35,363 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 14:52:18,226 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 14:54:51,418 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 15:19:31,002 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 15:21:04,919 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 15:24:12,159 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 15:27:11,058 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 15:28:06,983 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 16:21:59,614 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 16:26:40,789 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 16:28:07,989 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 16:30:31,061 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 16:33:19,984 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 16:33:42,813 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 16:36:06,935 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 16:39:37,301 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 16:40:57,324 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 18:16:59,924 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 18:17:27,854 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 18:18:50,502 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 18:23:01,594 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
-2020-10-11 20:16:38,931 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
+  File "C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\templates\base.html", line 68, in template
+    $(destElem).html('<img src="{{ url_for('static', filename=loading.gif') }}">');
+jinja2.exceptions.TemplateSyntaxError: expected token ',', got 'string'
+2020-10-11 20:45:40,013 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
+2020-10-11 20:47:02,250 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41
+2020-10-11 20:49:33,967 INFO: Microblog2 startup [in C:\Users\Home\Google Диск\PyProject\GoFlask\MigelBook\microblog2\app\__init__.py:41

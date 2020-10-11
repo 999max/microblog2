@@ -62,37 +62,3 @@ class PostForm(FlaskForm):
     post = TextAreaField(_l("Write something"), validators=[DataRequired(), Length(min=1, max=140)])
     submit = SubmitField(_l('Post it!'))
 
-
-
-########### ############ ############
-class FootballForm(FlaskForm):
-    player_name = StringField("Фамилия игрока", validators=[DataRequired()])
-    player_number = IntegerField("Номер", validators=[DataRequired()])
-    position = SelectMultipleField("Position",
-                                   choices=[("вратарь", 'Вратарь'), ("защитник", 'Защитник'),
-                                            ("полузащитник", 'Полузащитник'), ("нападающий", "Нападающий")],
-                                   default=["защитник"])
-    age = IntegerField("Возраст")
-    submit = SubmitField("Добавить игрока")
-
-
-class RecieptForm(FlaskForm):
-    ingredient_1 = StringField("Ингридиент 1", validators=[DataRequired()])
-    quantity_1 = IntegerField("Количество (грамм)", validators=[DataRequired()])
-    ingredient_2 = StringField("Ингридиент 2", validators=[DataRequired()])
-    quantity_2 = IntegerField("Количество (грамм)",validators=[DataRequired()])
-    salt = SelectMultipleField("Посолить?", choices=[('1', 'да'), ('2', "нет")])
-    submit = SubmitField("Добавить рецепт")
-
-
-class PetForm(FlaskForm):
-    pet_1 = StringField("Animal 1", validators=[DataRequired()])
-    pet_1_name = StringField("Name", validators=[DataRequired()])
-    sex_1 = SelectMultipleField("Sex of first animal:", choices=[("1", "male"), ("2", "female")])
-    pet_2 = StringField("Animal 2", validators=[DataRequired()])
-    pet_2_name = StringField("Name", validators=[DataRequired()])
-    sex_2 = SelectMultipleField("Sex of second animal:", choices=[("1", "male"), ("2", "female")])
-    submit = SubmitField("Add animals!")
-
-
-

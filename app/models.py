@@ -90,25 +90,3 @@ class Post(db.Model):
 
     def __repr__(self):
         return "<Post {} from user {}>".format(self.body, self.user_id)
-
-
-### Player - Ability
-
-class Player(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(64), index=True)
-    abilities = db.relationship("Ability", backref="football_player", lazy="dynamic")
-
-    def __repr__(self):
-        return "<Player {} has {} id>".format(self.name, self.id)
-
-
-class Ability(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    age = db.Column(db.Integer, index=True)
-    position = db.Column(db.String, index=True)
-    shot = db.Column(db.Integer, index=True)
-    player_id = db.Column(db.Integer, db.ForeignKey("player.id"))
-
-    def __repr__(self):
-        return "<Abilities: position-{}, shot-{}, age-{}.>".format(self.position, self.shot, self.age)
