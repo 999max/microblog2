@@ -28,7 +28,6 @@ babel = Babel(appl)
 
 
 
-
 if not appl.debug:
     if not os.path.exists("logs"):
         os.mkdir("logs")
@@ -45,6 +44,7 @@ if not appl.debug:
 @babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(appl.config["LANGUAGES"])
-    # return 'ru'
+    # return "ru"
+
 
 from app import routes, models, errors

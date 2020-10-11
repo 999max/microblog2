@@ -60,6 +60,20 @@
 {% block scripts %}
     {{ super() }}
     {{ moment.include_moment() }}
+    {{ moment.lang(g.locale) }}
     <!-- {{ moment.lang('ru') }} -->
+
+    <script>
+        function translate(sourceElem, destElem, destLang) {
+        $(destElem).html('<img src="{{ url_for('static', filename=loading.gif') }}">');
+        $.post('/translate', {
+            text: $(sourceElem).text(),
+            dest_language: destLang
+        }).done(function(response) {
+            $(destElem).text("{{ _('Error: Could not contact server.') }}");
+        });
+        }
+    </script>
+
 {% endblock %}
 
